@@ -1,7 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-
-        // PRUEBAS DE EXCEPCIONES
         try {
             Vehiculo v1 = new Auto("Toyota", "Corolla", 1800, 15000);
         } catch (IllegalArgumentException e) {
@@ -16,14 +14,12 @@ public class Main {
 
         Concesionaria c = new Concesionaria();
 
-        // PROBAR calcularTotalImpuestos() con lista vacía
         try {
             c.calcularTotalImpuestos();
         } catch (IllegalStateException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
-        // AGREGAR 6 VEHÍCULOS
+  
         c.agregarVehiculo(new Auto("Toyota", "Corolla", 2020, 15000));
         c.agregarVehiculo(new Auto("Kia", "Rio", 2021, 13000, 5));
 
@@ -33,14 +29,11 @@ public class Main {
         c.agregarVehiculo(new Camion("Volvo", "FH", 2019, 80000, 18));
         c.agregarVehiculo(new Camion("Scania", "R500", 2021, 95000, 20));
 
-        // CALCULAR TOTAL IMPUESTOS
         System.out.println("\nTotal impuestos: $" + c.calcularTotalImpuestos());
 
-        // VEHÍCULO MÁS CARO
         System.out.println("\nVehículo más caro:");
         System.out.println(c.obtenerVehiculoMasCaro());
 
-        // ORDENAR POR PRECIO
         c.ordenarPorPrecio();
 
         System.out.println("\nInventario ordenado por precio:");
